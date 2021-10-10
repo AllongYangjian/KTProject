@@ -20,4 +20,5 @@
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculator</string>
     <string name="tip_amount">结果</string>
+    <string name="list">列表</string>
 </resources>

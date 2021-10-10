@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_calculatorFragment"
             app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -35,6 +38,14 @@
         tools:layout="@layout/fragment_calculator" >
         <action
             android:id="@+id/action_calculatorFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.myapplication.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
