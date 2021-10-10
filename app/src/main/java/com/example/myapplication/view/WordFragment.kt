@@ -7,10 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentWordBinding
 
-class WordFragment:Fragment() {
-    private var _binding:FragmentWordBinding? = null
+class WordFragment : Fragment() {
+    private var _binding: FragmentWordBinding? = null
+
+    private var letterText: String? = null
 
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val fromBundle = LetterFragmentArgs.fromBundle(requireArguments())
+        letterText = fromBundle.letter
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,3 +38,4 @@ class WordFragment:Fragment() {
         _binding = null
     }
 }
+

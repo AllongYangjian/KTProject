@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.R
 import com.example.myapplication.adapter.LetterAdapter
 import com.example.myapplication.databinding.FragmentLetterBinding
 
@@ -31,8 +33,10 @@ class LetterFragment : Fragment() {
         binding.rvLetter.layoutManager = LinearLayoutManager(this.requireContext())
         binding.rvLetter.adapter = LetterAdapter(object : LetterAdapter.ItemClick {
             override fun onClick(letter: String) {
-//                LetterFragmentArgs
-                startActivity(letter)
+                val bundle = LetterFragmentArgs(letter).toBundle()
+                findNavController().navigate(R.id.action_letterFragment_to_wordFragment,bundle)
+
+//                startActivity(letter)
             }
         })
     }
