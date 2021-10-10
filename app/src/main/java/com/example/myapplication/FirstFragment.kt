@@ -20,8 +20,8 @@ class FirstFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
@@ -36,8 +36,12 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
-        binding.btnCalculator.setOnClickListener{
+        binding.btnCalculator.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_calculatorFragment)
+        }
+
+        binding.btnList.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_listFragment)
         }
 
     }
